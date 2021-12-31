@@ -40,7 +40,7 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation project(':libvlc')
 
-//    implementation(name: 'libvlc-armv8-3.4.7', ext: 'aar')
+//    implementation(name: 'libvlc-all-3.4.7', ext: 'aar')
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
