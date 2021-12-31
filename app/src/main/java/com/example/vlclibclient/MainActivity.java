@@ -145,13 +145,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.record_tv:
                 if (!isRecording) {
-                    new Thread(() -> {
-                        if (mediaPlayer.record(sdcardPath.getAbsolutePath())) {
-                            Toast.makeText(MainActivity.this, "录制开始", Toast.LENGTH_SHORT).show();
-                            recordTv.setText("停止");
-                            isRecording = true;
-                        }
-                    }).start();
+                    if (mediaPlayer.record(sdcardPath.getAbsolutePath())) {
+                        Toast.makeText(MainActivity.this, "录制开始", Toast.LENGTH_SHORT).show();
+                        recordTv.setText("停止");
+                        isRecording = true;
+                    }
                 } else {
                     mediaPlayer.record(null);
                     Toast.makeText(MainActivity.this, "录制结束", Toast.LENGTH_SHORT).show();
